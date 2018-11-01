@@ -21,7 +21,7 @@ Languages: XML, Java, etc.
 
 # 5.Design
 ## 5.1 Framework
-![](architecture.png)
+![](images/architecture.png)
 
 ## 5.2 Navigation
 Using DrawerLayout navigation. (https://developer.android.com/training/implementing-navigation/nav-drawer?hl=en)
@@ -30,7 +30,7 @@ There are 6 items in msccs website navigator, About, Admission, Curriculum, Grad
 a. Main items only. Like twitter and google map’s navigator (figure 1 and figure 2).
 
 b. Sub-items grouping by their main items. Like My Observatory (figure 3).
-![](mobile_apps_navigation_reference.png)
+![](images/mobile_apps_navigation_reference.png)
 c. Descending grouping. Like msc-cs webpage in mobile version (figure 4). However, there are very limited documents about how to implement a descending drawer in Android Studio. (https://developer.android.com/training/implementing-navigation/descendant)
 
 
@@ -41,7 +41,7 @@ There are 2 options for index page / home page design:
 a. Copy the UI design of msccs home page directly. That may be time consuming and labor consuming. Also, the whole page will be very long.
 b. Show all items by groups. User can go into a specific page by clicking an item. Like MTR Mobile (figure 6).
 c. Show a limited information only. For example, we can show an index picture and information about program overview only, so that the home page is not too long to scroll in the mobile phone.
-![](2.png)
+![](images/2.png)
 Back-to-index button: user can go back to home page by clicking msccs logo on the top of the drawer (figure 7).
 
 
@@ -60,6 +60,6 @@ Each page contains various informations such as texts, images, tables. We can de
 
 # 7.Other ideas
 a. 可以将 MSc CS 的几个stream与魔法做对应，比如Financial对应Alchemy炼金术，Cyber Sec对应Defense Against the Dark Arts黑魔法防御。。
-![](streams.jpeg)
+![](images/streams.jpeg)
 
 (TBD)
