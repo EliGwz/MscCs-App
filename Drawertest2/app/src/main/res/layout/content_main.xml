@@ -15,22 +15,10 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/contextTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title: About HKU" />
-
-        <TextView
-            android:id="@+id/contextMain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="The University of Hong Kong ..."/>
-
-        <TextView
             android:id="@+id/contextText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="html string" />
+            android:text="String from html" />
 
     </LinearLayout>
 </ScrollView>

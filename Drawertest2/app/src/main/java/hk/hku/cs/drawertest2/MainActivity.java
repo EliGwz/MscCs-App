@@ -28,6 +28,8 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()){
             new DownloadWebpageTask().execute(stringUrl);
+
         } else{
             contentTextView.setText("No network connection available.");
         }
@@ -85,15 +88,14 @@ public class MainActivity extends AppCompatActivity
                 return "Unable to retrieve web page. URL may be invalid.";
             } }
         @Override
-        protected void onPostExecute(String result) {
-            contentTextView.setText(result);   // here, result is the html string.
+        protected void onPostExecute(String HTMLSource) {
+            contentTextView.setText(HTMLSource);   // here, HTMLsource is the html string.
         }
     }
 
     private String downloadUrl(String myurl) throws IOException{
         InputStream is = null;
-        // Only display the first 5000 characters of the retrieved web page content. int len = 5000;
-        int len = 5000;
+        int len = 2*1024*1024;
         try {
             URL url = new URL(myurl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection(); conn.setReadTimeout(10000 /* milliseconds */); conn.setConnectTimeout(15000 /* milliseconds */); conn.setRequestMethod("GET");
@@ -103,7 +105,8 @@ public class MainActivity extends AppCompatActivity
             Log.d(DEBUG_TAG, "The response is: " + response);
             is = conn.getInputStream();
             // Convert the InputStream into a string
-            String contentAsString = readIt(is, len);
+            //String contentAsString = readIt(is, len);
+            String contentAsString = readIt(is,len);
             return contentAsString;
 
             // Makes sure that the InputStream is closed after the app is
@@ -118,9 +121,26 @@ public class MainActivity extends AppCompatActivity
     // Convert stream into a string
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
         Reader reader = null;
+        //reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
         reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
         reader.read(buffer);
+
+        /////////// pattern match //////////////
+
+        String HTMLsource = new String(buffer);
+        String mapping = "0";
+        Pattern p = Pattern.compile("<title>(.*?)</title>");
+        Matcher m = p.matcher(HTMLsource);
+        if(m.find()){
+            mapping = m.group(1);
+        }else{
+            mapping = "not found";
+        }
+        System.out.println(mapping);
+
+        /////////// end of pattern match /////////////
         return new String(buffer);
+        //return mapping;
     }
 
 
