@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -21,6 +22,15 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -42,10 +52,11 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /******************************************/
-        /***** network connection: get html *******/
         contentTextView = (TextView) findViewById(R.id.contextText);
         String stringUrl = "https://www.msc-cs.hku.hk/";
+        /******************************************/
+        /***** network connection: get html *******/
+
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()){
@@ -79,6 +90,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+
     private class DownloadWebpageTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
@@ -105,9 +117,11 @@ public class MainActivity extends AppCompatActivity
             Log.d(DEBUG_TAG, "The response is: " + response);
             is = conn.getInputStream();
             // Convert the InputStream into a string
-            //String contentAsString = readIt(is, len);
             String contentAsString = readIt(is,len);
-            return contentAsString;
+            System.out.println(contentAsString);
+            String mapping = patternMatch(contentAsString);
+            //return contentAsString;
+            return mapping;
 
             // Makes sure that the InputStream is closed after the app is
             // finished using it.
@@ -124,12 +138,12 @@ public class MainActivity extends AppCompatActivity
         //reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
         reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
         reader.read(buffer);
+        return new String(buffer);
+    }
 
-        /////////// pattern match //////////////
-
-        String HTMLsource = new String(buffer);
-        String mapping = "0";
-        Pattern p = Pattern.compile("<title>(.*?)</title>");
+    public String patternMatch(String HTMLsource){
+        String mapping;
+        Pattern p = Pattern.compile("<title>(.*?)</title>"); // match title
         Matcher m = p.matcher(HTMLsource);
         if(m.find()){
             mapping = m.group(1);
@@ -138,9 +152,7 @@ public class MainActivity extends AppCompatActivity
         }
         System.out.println(mapping);
 
-        /////////// end of pattern match /////////////
-        return new String(buffer);
-        //return mapping;
+        return mapping;
     }
 
 
