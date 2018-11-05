@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity
             is = conn.getInputStream();
             // Convert the InputStream into a string
             String contentAsString = readIt(is,len);
+            System.out.println(contentAsString.length());
             System.out.println(contentAsString);
             String mapping = patternMatch(contentAsString);
             //return contentAsString;
@@ -137,20 +138,35 @@ public class MainActivity extends AppCompatActivity
         Reader reader = null;
         //reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
         reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
-        reader.read(buffer);
-        return new String(buffer);
+
+        int readCount = 0;
+        int newCount;
+        while (readCount < len) {
+            newCount = readCount + reader.read(buffer, readCount, len - readCount);
+            if(readCount>newCount){
+                break;
+            }
+            readCount = newCount;
+            System.out.println(readCount);
+        }
+        System.out.println(readCount);
+
+        return new String(buffer,0,readCount);
     }
 
     public String patternMatch(String HTMLsource){
         String mapping;
-        Pattern p = Pattern.compile("<title>(.*?)</title>"); // match title
+//        Pattern p = Pattern.compile("<title>(.*?)</title>"); // match title
+        Pattern p = Pattern.compile("<p class=\"flow-text\" style=\"text-align: center;\">(.*?)</p>"); // match title
+//        Pattern p = Pattern.compile("<a href=\"/About/Faculty\">(.*?)</a>"); // match title
         Matcher m = p.matcher(HTMLsource);
         if(m.find()){
             mapping = m.group(1);
         }else{
             mapping = "not found";
+            mapping = m.group(1);
         }
-        System.out.println(mapping);
+        //System.out.println(mapping);
 
         return mapping;
     }
