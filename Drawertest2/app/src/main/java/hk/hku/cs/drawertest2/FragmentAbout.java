@@ -24,14 +24,14 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Fragment1 extends Fragment {
+public class FragmentAbout extends Fragment {
 
     private TextView aboutText;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment1,container,false);
+        return inflater.inflate(R.layout.fragment_about,container,false);
     }
 
     @Override

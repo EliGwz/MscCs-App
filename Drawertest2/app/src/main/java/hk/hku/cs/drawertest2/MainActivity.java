@@ -212,13 +212,21 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_about) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Fragment1()).commit();
-        } else if (id == R.id.nav_gallery) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Fragment2()).commit();
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAbout()).commit();
+        } else if (id == R.id.nav_admission) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAdmission()).commit();
+        } else if (id == R.id.nav_application) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentApplication()).commit();
+        } else if (id == R.id.nav_fee) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentFee()).commit();
+        } else if (id == R.id.nav_overview) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentOverview()).commit();
+        } else if (id == R.id.nav_course) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentCourse()).commit();
+        } else if (id == R.id.nav_duration) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentDuration()).commit();
+        } else if (id == R.id.nav_regulation) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentRegulation()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

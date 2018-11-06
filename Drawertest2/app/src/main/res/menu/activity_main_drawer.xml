@@ -8,34 +8,47 @@
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_camera"
             android:title="About" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Admission" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Curriculum" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Alumni" />
-        <item
-            android:id="@+id/nav_news"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="News" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Admission">
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_admission"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Admission Requirements" />
+                <item
+                    android:id="@+id/nav_application"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Application Procedures" />
+                <item
+                    android:id="@+id/nav_fee"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Composition Fees" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Curriculum">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_overview"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Programme Overview" />
+                <item
+                    android:id="@+id/nav_course"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Courses" />
+                <item
+                    android:id="@+id/nav_duration"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Duration &amp; Schedule" />
+                <item
+                    android:id="@+id/nav_regulation"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Regulations &amp; Syllabus" />
+            </group>
         </menu>
     </item>
 
