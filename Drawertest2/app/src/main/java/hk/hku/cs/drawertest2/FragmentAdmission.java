@@ -1,18 +1,113 @@
 package hk.hku.cs.drawertest2;
 
+import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.TextView;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class FragmentAdmission extends Fragment {
+
+    private TextView header, title1, title2, title3, tp11, tp21, tp31, tp12, tp22, tp32;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_admission,container,false);
+
+        View view = inflater.inflate(R.layout.fragment_admission,container,false);
+
+        String stringUrl = "https://www.msc-cs.hku.hk/Admission/Requirements";
+        header = (TextView) view.findViewById(R.id.admissionText);
+        title1 = (TextView) view.findViewById(R.id.eligibility);
+        title2 = (TextView) view.findViewById(R.id.regulations);
+        title3 = (TextView) view.findViewById(R.id.eng_req);
+
+        tp11 = (TextView) view.findViewById(R.id.eligibilit_p11);
+        tp21 = (TextView) view.findViewById(R.id.regulations_p21);
+        tp31 = (TextView) view.findViewById(R.id.eng_req_p31);
+
+        tp12 = (TextView) view.findViewById(R.id.eligibilit_p12);
+        tp22 = (TextView) view.findViewById(R.id.regulations_p22);
+        tp32 = (TextView) view.findViewById(R.id.eng_req_p32);
+
+        new DownloadWebpageTask().execute(stringUrl);
+
+        return view;
+    }
+
+    private class DownloadWebpageTask extends AsyncTask<String, Void, Document> {
+        @Override
+        protected Document doInBackground(String... urls) {
+            String url = urls[0];
+            Document doc = null;
+            try{
+                doc = Jsoup.connect(url).get();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+            return doc;
+        }
+        @Override
+        protected void onPostExecute(Document doc) {
+            String title = doc.title();
+            header.setText(title);
+
+            /************************** Eligibility *************************/
+            Element titleElement1 = doc.getElementById("Eligibility");
+            String titleString1 = titleElement1.select("strong").text();
+            title1.setText(titleString1);
+            String tpString11 = titleElement1.select("p").get(1).text();
+            tp11.setText(tpString11);
+            // items = 4
+            String tpString12 = "";
+            for (int i = 2; i<=5; i++){
+                tpString12 = tpString12 + titleElement1.select("p").get(i).text() + "\n\n";
+            }
+            tp12.setText(tpString12);
+
+            /************************** regulations *************************/
+            Element titleElement2 = doc.getElementById("regulations");
+            String titleString2 = titleElement2.select("strong").text();
+            title2.setText(titleString2);
+            // items = 3
+            String tpString22 = "";
+            for (int i = 1; i<=3; i++){
+                tpString22 = tpString22 + titleElement2.select("p").get(i).text() + "\n\n";
+            }
+            tp22.setText(tpString22);
+
+            /************************** English Requirement *************************/
+            Element titleElement3 = doc.getElementById("eng-req");
+            String titleString3 = titleElement3.select("strong").text();
+            title3.setText(titleString3);
+            String tpString31 = titleElement3.select("p").get(1).text();
+            tp31.setText(tpString31);
+            // items = 5
+            String tpString32 = "";
+            for (int i = 2; i<=6; i++){
+                tpString32 = tpString32 + titleElement3.select("p").get(i).text() + "\n\n";
+            }
+            tp32.setText(tpString32);
+        }
     }
 }

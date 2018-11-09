@@ -1,13 +1,17 @@
 package hk.hku.cs.drawertest2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.NetworkOnMainThreadException;
 import android.os.StrictMode;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -22,11 +26,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -38,6 +37,7 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity
 
     private static final String DEBUG_TAG = "msccsIndexPage";
     private TextView contentTextView;
+    private String textString = "default";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity
 
         contentTextView = (TextView) findViewById(R.id.contextText);
         String stringUrl = "https://www.msc-cs.hku.hk/";
+        //String stringUrl = "https://www.msc-cs.hku.hk/Admission/Requirements";
         /******************************************/
         /***** network connection: get html *******/
 
@@ -65,8 +67,17 @@ public class MainActivity extends AppCompatActivity
         } else{
             contentTextView.setText("No network connection available.");
         }
+
         /******* End of network connection: get html ********/
         /****************************************************/
+
+        /********************* send data to FragmentAdmission ********************/
+        /*Bundle bundle = new Bundle();
+        bundle.putString("data", "HTMLSource");
+        FragmentAdmission fragmentAdmission = new FragmentAdmission();
+        fragmentAdmission.setArguments(bundle);*/
+
+        /********************* End of send data to FragmentAdmission *********************/
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -92,17 +103,32 @@ public class MainActivity extends AppCompatActivity
 
 
     private class DownloadWebpageTask extends AsyncTask<String, Void, String> {
+        String patternString = "<p class=\"flow-text\" style=\"text-align: center;\">(.*?)</p>";
+        //String patternString = "<div class=\"section scrollspy\" id=\"Eligibility\" style=\"background:transparent;\"><p><strong>(.*?)</strong></p>";
+
         @Override
         protected String doInBackground(String... urls) {
             try {
-                return downloadUrl(urls[0]);
+                //return downloadUrl(urls[0]);
+                return afterMapping(urls[0],patternString);
             } catch (IOException e) {
                 return "Unable to retrieve web page. URL may be invalid.";
             } }
         @Override
         protected void onPostExecute(String HTMLSource) {
-            contentTextView.setText(HTMLSource);   // here, HTMLsource is the html string.
+            contentTextView.setText(HTMLSource);
         }
+    }
+
+
+    private  String afterMapping (String url, String patternString) throws IOException{
+        String mapping;
+        String HTMLSource;
+        HTMLSource = downloadUrl(url);
+        mapping = patternMatch(HTMLSource,patternString);
+        return mapping;
+
+
     }
 
     private String downloadUrl(String myurl) throws IOException{
@@ -119,10 +145,10 @@ public class MainActivity extends AppCompatActivity
             // Convert the InputStream into a string
             String contentAsString = readIt(is,len);
             System.out.println(contentAsString.length());
-            System.out.println(contentAsString);
-            String mapping = patternMatch(contentAsString);
-            //return contentAsString;
-            return mapping;
+            // System.out.println(contentAsString);
+            //String mapping = patternMatch(contentAsString,"<p class=\"flow-text\" style=\"text-align: center;\">(.*?)</p>");
+            return contentAsString;
+            //return mapping;
 
             // Makes sure that the InputStream is closed after the app is
             // finished using it.
@@ -154,17 +180,17 @@ public class MainActivity extends AppCompatActivity
         return new String(buffer,0,readCount);
     }
 
-    public String patternMatch(String HTMLsource){
+    public String patternMatch(String HTMLsource, String patternString){
         String mapping;
 //        Pattern p = Pattern.compile("<title>(.*?)</title>"); // match title
-        Pattern p = Pattern.compile("<p class=\"flow-text\" style=\"text-align: center;\">(.*?)</p>"); // match title
+        Pattern p = Pattern.compile(patternString); // match title
 //        Pattern p = Pattern.compile("<a href=\"/About/Faculty\">(.*?)</a>"); // match title
         Matcher m = p.matcher(HTMLsource);
         if(m.find()){
             mapping = m.group(1);
         }else{
             mapping = "not found";
-            mapping = m.group(1);
+            //mapping = m.group(1);
         }
         //System.out.println(mapping);
 
@@ -227,10 +253,13 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentDuration()).commit();
         } else if (id == R.id.nav_regulation) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentRegulation()).commit();
+        } else if (id == R.id.nav_contact){
+            // do something
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 

@@ -51,5 +51,15 @@
             </group>
         </menu>
     </item>
+    <item android:title="Other Information">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_contact"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Contact Us" />
+            </group>
+        </menu>
+    </item>
 
 </menu>
