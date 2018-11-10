@@ -55,7 +55,6 @@ In our design, all pages are implemented by fragments.
 
 There are 9 fragmets:
 ![](images/3.jpeg)
-![](images/4.jpeg)
 
 
 # 6.Key techniques
