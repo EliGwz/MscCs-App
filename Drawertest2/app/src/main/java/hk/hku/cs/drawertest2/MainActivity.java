@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_regulation) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentRegulation()).commit();
         } else if (id == R.id.nav_contact){
-            // do something
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentContact()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

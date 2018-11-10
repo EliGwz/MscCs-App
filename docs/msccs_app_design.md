@@ -47,18 +47,32 @@ Back-to-index button: user can go back to home page by clicking msccs logo on th
 
 ## 5.4 Pages
 Each page contains various informations such as texts, images, tables. We can design the UI by using multiple layouts based on what kinds of informations in contains. Commonly, most of the pages can be created by LinearLayout.
-(For reference, https://blog.csdn.net/llping2011/article/details/9992941)
+For reference:
+https://blog.csdn.net/llping2011/article/details/9992941
+[Android布局实现-ViewPager+Fragment+TabLayout整合](https://tomoya92.github.io/2017/04/05/android-viewpager-fragment-tablayout/)
+
+In our design, all pages are implemented by fragments.
+
+There are 9 fragmets:
+![](images/3.jpeg)
+![](images/4.jpeg)
 
 
 # 6.Key techniques
 |Function|Tool|
 |:--:|:--:|
 |Handling menu item clicks|1. FrameLayout  <br> 2. getSupportFragmentManager().beginTransaction().replace(…)|
-|Loading HTML |Network communication (COMP7506 Android3.pdf from page 32 to 42)|
+|Loading HTML |Jsoup|
 |Extracting useful information from HTML |Regular Expression   ( http://en.wikipedia.org/wiki/Regular_expression )|
 
+# 7.UI
+## 7.1 Text size
+![](images/textSize.jpeg)
+## 7.2 Text Color
+![](images/textColor.jpeg)
 
-# 7.Other ideas
+
+# 8.Other ideas
 a. 可以将 MSc CS 的几个stream与魔法做对应，比如Financial对应Alchemy炼金术，Cyber Sec对应Defense Against the Dark Arts黑魔法防御。。
 ![](images/streams.jpeg)
 
