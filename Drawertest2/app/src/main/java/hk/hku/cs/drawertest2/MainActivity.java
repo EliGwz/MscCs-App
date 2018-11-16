@@ -53,32 +53,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        contentTextView = (TextView) findViewById(R.id.contextText);
-        String stringUrl = "https://www.msc-cs.hku.hk/";
-        //String stringUrl = "https://www.msc-cs.hku.hk/Admission/Requirements";
-        /******************************************/
-        /***** network connection: get html *******/
-
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()){
-            new DownloadWebpageTask().execute(stringUrl);
-
-        } else{
-            contentTextView.setText("No network connection available.");
-        }
-
-        /******* End of network connection: get html ********/
-        /****************************************************/
-
-        /********************* send data to FragmentAdmission ********************/
-        /*Bundle bundle = new Bundle();
-        bundle.putString("data", "HTMLSource");
-        FragmentAdmission fragmentAdmission = new FragmentAdmission();
-        fragmentAdmission.setArguments(bundle);*/
-
-        /********************* End of send data to FragmentAdmission *********************/
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -97,107 +71,11 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHome()).commit();
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-
-
-    private class DownloadWebpageTask extends AsyncTask<String, Void, String> {
-        String patternString = "<p class=\"flow-text\" style=\"text-align: center;\">(.*?)</p>";
-        //String patternString = "<div class=\"section scrollspy\" id=\"Eligibility\" style=\"background:transparent;\"><p><strong>(.*?)</strong></p>";
-
-        @Override
-        protected String doInBackground(String... urls) {
-            try {
-                //return downloadUrl(urls[0]);
-                return afterMapping(urls[0],patternString);
-            } catch (IOException e) {
-                return "Unable to retrieve web page. URL may be invalid.";
-            } }
-        @Override
-        protected void onPostExecute(String HTMLSource) {
-            contentTextView.setText(HTMLSource);
-        }
-    }
-
-
-    private  String afterMapping (String url, String patternString) throws IOException{
-        String mapping;
-        String HTMLSource;
-        HTMLSource = downloadUrl(url);
-        mapping = patternMatch(HTMLSource,patternString);
-        return mapping;
-
-
-    }
-
-    private String downloadUrl(String myurl) throws IOException{
-        InputStream is = null;
-        int len = 2*1024*1024;
-        try {
-            URL url = new URL(myurl);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection(); conn.setReadTimeout(10000 /* milliseconds */); conn.setConnectTimeout(15000 /* milliseconds */); conn.setRequestMethod("GET");
-            conn.setDoInput(true);
-            conn.connect();
-            int response = conn.getResponseCode();
-            Log.d(DEBUG_TAG, "The response is: " + response);
-            is = conn.getInputStream();
-            // Convert the InputStream into a string
-            String contentAsString = readIt(is,len);
-            System.out.println(contentAsString.length());
-            // System.out.println(contentAsString);
-            //String mapping = patternMatch(contentAsString,"<p class=\"flow-text\" style=\"text-align: center;\">(.*?)</p>");
-            return contentAsString;
-            //return mapping;
-
-            // Makes sure that the InputStream is closed after the app is
-            // finished using it.
-        } finally {
-            if (is != null) {
-                is.close();
-            }
-        }
-    }
-
-    // Convert stream into a string
-    public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
-        Reader reader = null;
-        //reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
-        reader = new InputStreamReader(stream, "UTF-8"); char[] buffer = new char[len];
-
-        int readCount = 0;
-        int newCount;
-        while (readCount < len) {
-            newCount = readCount + reader.read(buffer, readCount, len - readCount);
-            if(readCount>newCount){
-                break;
-            }
-            readCount = newCount;
-            System.out.println(readCount);
-        }
-        System.out.println(readCount);
-
-        return new String(buffer,0,readCount);
-    }
-
-    public String patternMatch(String HTMLsource, String patternString){
-        String mapping;
-//        Pattern p = Pattern.compile("<title>(.*?)</title>"); // match title
-        Pattern p = Pattern.compile(patternString); // match title
-//        Pattern p = Pattern.compile("<a href=\"/About/Faculty\">(.*?)</a>"); // match title
-        Matcher m = p.matcher(HTMLsource);
-        if(m.find()){
-            mapping = m.group(1);
-        }else{
-            mapping = "not found";
-            //mapping = m.group(1);
-        }
-        //System.out.println(mapping);
-
-        return mapping;
-    }
-
-
 
     @Override
     public void onBackPressed() {
@@ -237,7 +115,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_about) {
+        if (id == R.id.nav_home) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHome()).commit();
+        } else if (id == R.id.nav_about) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAbout()).commit();
         } else if (id == R.id.nav_admission) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAdmission()).commit();
