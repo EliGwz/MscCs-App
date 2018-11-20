@@ -58,6 +58,45 @@
                 android:layout_height="wrap_content"
                 android:text="paragraph11"
                 android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/pdf1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online Application"
+                android:textSize="@dimen/paragraph_text"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:onClick="pdf1OnClick"/>
+            <TextView
+                android:id="@+id/regulation_p2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paragraph11"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/pdf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online Application"
+                android:textSize="@dimen/paragraph_text"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:onClick="pdf2OnClick"/>
+            <TextView
+                android:id="@+id/regulation_p3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paragraph11"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/pdf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online Application"
+                android:textSize="@dimen/paragraph_text"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:onClick="pdf3OnClick"/>
 
         </LinearLayout>
 

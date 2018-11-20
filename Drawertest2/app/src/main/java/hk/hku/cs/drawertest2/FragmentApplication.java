@@ -1,5 +1,6 @@
 package hk.hku.cs.drawertest2;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -38,7 +39,9 @@ public class FragmentApplication extends Fragment {
         new DownloadWebpageTask().execute(stringUrl);
         applyBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                applyBtn.setTextColor(Color.RED);
+                Intent intent = new Intent(getActivity(),OnlineApplication.class);
+                startActivity(intent);
+                //applyBtn.setTextColor(Color.RED);
             }
         });
         return view;
