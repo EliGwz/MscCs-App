@@ -2,6 +2,7 @@ package hk.hku.cs.drawertest2;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.provider.DocumentsContract;
 import android.support.v7.app.ActionBar;
@@ -11,6 +12,7 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -29,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
      */
+    private Button buttonNext, buttonToApp;
     private static final boolean AUTO_HIDE = true;
 
     /**
@@ -91,7 +94,8 @@ public class HomeActivity extends AppCompatActivity {
 
         mVisible = true;
         mContentView = findViewById(R.id.overview_context);
-
+        buttonNext = findViewById(R.id.next_btn);
+        buttonToApp = findViewById(R.id.toApp_btn);
 
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +111,25 @@ public class HomeActivity extends AppCompatActivity {
         header.setText("Master of Science in Computer Science\nHKU");
         overview_context = (TextView)findViewById(R.id.overview_context);
         new DownloadWebpageTask().execute(stringUrl);
+
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // switch to activity "What kind of talent do you want to get?"
+                Intent intent = new Intent(v.getContext(),TalentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonToApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // to MainActivity
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private class DownloadWebpageTask extends AsyncTask<String, Void, Document> {

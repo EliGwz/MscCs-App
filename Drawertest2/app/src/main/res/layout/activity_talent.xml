@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/Image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:contentDescription="BackGround"
+        android:src="@drawable/hku_logo"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What kind of talent do you want to get?"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"/>
+        <!--android:layout_centerInParent="true"-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/title">
+        <Button
+            android:id="@+id/security"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30sp"
+            android:paddingBottom="30sp"
+            android:text="Unbreakable Defender"
+            android:background="@android:color/holo_blue_dark"/>
+        <Button
+            android:id="@+id/multimedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30sp"
+            android:paddingBottom="30sp"
+            android:text="Multimedia Master"
+            android:background="@android:color/holo_green_dark"/>
+        <Button
+            android:id="@+id/financial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30sp"
+            android:paddingBottom="30sp"
+            android:text="Financial Elite in Finance"
+            android:background="@android:color/holo_red_dark"/>
+        <Button
+            android:id="@+id/general"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30sp"
+            android:paddingBottom="30sp"
+            android:text="All-round Developer"
+            android:background="@android:color/holo_orange_dark"/>
+    </LinearLayout>
+
+</RelativeLayout>

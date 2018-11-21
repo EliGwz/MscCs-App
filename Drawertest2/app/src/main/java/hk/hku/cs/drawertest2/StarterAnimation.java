@@ -54,8 +54,9 @@ public class StarterAnimation extends AppCompatActivity {
     }
 
     private void startActivity() {
-        Intent switchToHome = new Intent(StarterAnimation.this, HomeActivity.class);
-        startActivity(switchToHome);
+        //Intent switchToHome = new Intent(StarterAnimation.this, HomeActivity.class);
+        Intent switchTo = new Intent(StarterAnimation.this, MainActivity.class);
+        startActivity(switchTo);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         finish();
     }

@@ -26,8 +26,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        // show FragmentHome when first start
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHome()).commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -117,9 +121,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHome()).commit();
-        } else if (id == R.id.nav_about) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAbout()).commit();
-        } else if (id == R.id.nav_admission) {
+            //Intent intent = new Intent(this,HomeActivity.class); startActivity(intent);
+        } //else if (id == R.id.nav_about) {
+            //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAbout()).commit();
+        //}
+        else if (id == R.id.nav_admission) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAdmission()).commit();
         } else if (id == R.id.nav_application) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentApplication()).commit();

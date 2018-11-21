@@ -47,7 +47,7 @@ public class FragmentAdmission extends Fragment {
         tp31 = (TextView) view.findViewById(R.id.eng_req_p31);
 
         tp12 = (TextView) view.findViewById(R.id.eligibilit_p12);
-        tp22 = (TextView) view.findViewById(R.id.regulations_p22);
+        //tp22 = (TextView) view.findViewById(R.id.regulations_p22);
         tp32 = (TextView) view.findViewById(R.id.eng_req_p32);
 
         new DownloadWebpageTask().execute(stringUrl);
@@ -94,7 +94,7 @@ public class FragmentAdmission extends Fragment {
             for (int i = 1; i<=3; i++){
                 tpString22 = tpString22 + titleElement2.select("p").get(i).text() + "\n\n";
             }
-            tp22.setText(tpString22);
+            tp21.setText(tpString22);
 
             /************************** English Requirement *************************/
             Element titleElement3 = doc.getElementById("eng-req");
@@ -108,6 +108,8 @@ public class FragmentAdmission extends Fragment {
                 tpString32 = tpString32 + titleElement3.select("p").get(i).text() + "\n\n";
             }
             tp32.setText(tpString32);
+
+            System.out.println("/************************/\n"+tp21.getText().toString()+"\n/************************/");
         }
     }
 }

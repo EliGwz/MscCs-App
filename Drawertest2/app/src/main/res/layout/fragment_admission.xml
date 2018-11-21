@@ -35,7 +35,7 @@
                 android:text="Admission Requirements"
                 android:textSize="@dimen/fragment_h1_text"
                 android:textColor="@color/fragment_h1_textColor"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
             <View
                 android:layout_width="250dp"
                 android:layout_height="4dp"
@@ -79,7 +79,7 @@
                 android:id="@+id/regulations_p21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph21"
+                android:text=""
                 android:textSize="@dimen/paragraph_text"/>
             <TextView
                 android:id="@+id/regulations_p22"

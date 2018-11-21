@@ -6,6 +6,7 @@
     android:background="@android:color/white">
 
     <LinearLayout
+        android:id="@+id/regulationLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -56,47 +57,41 @@
                 android:id="@+id/regulation_p1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph11"
+                android:text="1. General Regulations of The University "
                 android:textSize="@dimen/paragraph_text"/>
             <TextView
                 android:id="@+id/pdf1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Online Application"
+                android:text="https://www4.hku.hk/pubunit/drcd/files/pgdr2017-18/genreg.pdf"
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textColorLink="@android:color/holo_blue_dark"
-                android:onClick="pdf1OnClick"/>
+                android:textColorLink="@android:color/holo_blue_dark" />
             <TextView
                 android:id="@+id/regulation_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph11"
+                android:text="2. University's Regulations for Taught Postgraduate Curricula: "
                 android:textSize="@dimen/paragraph_text"/>
             <TextView
                 android:id="@+id/pdf2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Online Application"
+                android:text="https://www4.hku.hk/pubunit/drcd/files/pgdr2017-18/tpg-regulations.pdf"
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textColorLink="@android:color/holo_blue_dark"
-                android:onClick="pdf2OnClick"/>
+                android:textColorLink="@android:color/holo_blue_dark" />
             <TextView
                 android:id="@+id/regulation_p3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph11"
+                android:text="3. Degree Regulations of MSc(CompSc)"
                 android:textSize="@dimen/paragraph_text"/>
             <TextView
-                android:id="@+id/pdf3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Online Application"
-                android:textSize="@dimen/paragraph_text"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textColorLink="@android:color/holo_blue_dark"
-                android:onClick="pdf3OnClick"/>
+                android:text="The regulations and syllabus are applicable to students admitted to the curriculum in 2018-2019 and thereafter."
+                android:textSize="@dimen/paragraph_text"/>
 
         </LinearLayout>
 

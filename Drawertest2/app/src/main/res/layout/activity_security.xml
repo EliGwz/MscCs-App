@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".SecurityActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <ImageView
+        android:id="@+id/Image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:contentDescription="BackGround"
+        android:src="@drawable/hku_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dip"
+                    android:src="@drawable/application"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/body_margin_left"
+                android:layout_marginRight="@dimen/body_margin_right">
+                <TextView
+                    android:id="@+id/title_security"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cyber Security Stream"
+                    android:textSize="@dimen/fragment_h1_text"
+                    android:textStyle="bold"/>
+                <View
+                    android:layout_width="250dp"
+                    android:layout_height="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/holo_green_dark" />
+
+                <TextView
+                    android:id="@+id/text_security"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="about cyber security"
+                    android:textSize="@dimen/paragraph_text"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/home_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+</android.support.constraint.ConstraintLayout>

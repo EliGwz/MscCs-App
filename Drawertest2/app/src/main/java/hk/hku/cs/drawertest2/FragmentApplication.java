@@ -40,6 +40,8 @@ public class FragmentApplication extends Fragment {
         applyBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),OnlineApplication.class);
+                String appUrl = "https://aal.hku.hk/tpg/programme/master-science-computer-science";
+                intent.putExtra("extraTag",appUrl);
                 startActivity(intent);
                 //applyBtn.setTextColor(Color.RED);
             }

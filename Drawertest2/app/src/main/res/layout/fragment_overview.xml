@@ -42,143 +42,118 @@
                 android:layout_marginBottom="10dp"
                 android:background="@android:color/holo_green_dark" />
 
+            <LinearLayout
+                android:id="@+id/overviewLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/h2_margin_bottom"
+                    android:text="Programme Overview"
+                    android:textSize="@dimen/fragment_h2_text"
+                    android:textColor="@color/fragment_h2_textColor"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/overview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="Programme Overview"
-                android:textSize="@dimen/fragment_h2_text"
-                android:textColor="@color/fragment_h2_textColor"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/overview_p11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph11"
-                android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/overview_p12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph12"
-                android:textSize="@dimen/paragraph_text"/>
+            <LinearLayout
+                android:id="@+id/streamLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/h2_margin_bottom">
+                <TextView
+                    android:id="@+id/stream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/h2_margin_bottom"
+                    android:text="Stream of Study"
+                    android:textSize="@dimen/fragment_h2_text"
+                    android:textColor="@color/fragment_h2_textColor"
+                    android:textStyle="bold"/>
+                <Button
+                    android:id="@+id/security"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:text="Unbreakable Defender"
+                    android:background="@android:color/holo_blue_dark"/>
+                <Button
+                    android:id="@+id/multimedia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:text="Multimedia Master"
+                    android:background="@android:color/holo_green_dark"/>
+                <Button
+                    android:id="@+id/financial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:text="Financial Elite in Finance"
+                    android:background="@android:color/holo_red_dark"/>
+                <Button
+                    android:id="@+id/general"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:text="All-round Developer"
+                    android:background="@android:color/holo_orange_dark"/>
 
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/stream"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="Stream of Study"
-                android:textSize="@dimen/fragment_h2_text"
-                android:textColor="@color/fragment_h2_textColor"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/stream_p21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph21"
-                android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/stream_p22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph22"
-                android:textSize="@dimen/paragraph_text"/>
+            <LinearLayout
+                android:id="@+id/enrolmentLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/h2_margin_bottom">
+                <TextView
+                    android:id="@+id/enrolment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/h2_margin_bottom"
+                    android:text="Enrolment Mode"
+                    android:textSize="@dimen/fragment_h2_text"
+                    android:textColor="@color/fragment_h2_textColor"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(a)Courses (60 credits) + Project (12 credits)\n(b)Courses (48 credits) + Dissertation (24 credits)"
+                    android:textSize="@dimen/paragraph_text"/>
+            </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/pattern"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="Pattern of Study"
-                android:textSize="@dimen/fragment_h2_text"
-                android:textColor="@color/fragment_h2_textColor"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/pattern_p31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph31"
-                android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/pattern_p32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph32"
-                android:textSize="@dimen/paragraph_text"/>
-
-
-            <TextView
-                android:id="@+id/enrolment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="Enrolment Mode"
-                android:textSize="@dimen/fragment_h2_text"
-                android:textColor="@color/fragment_h2_textColor"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/enrolment_p41"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph31"
-                android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/enrolment_p42"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph32"
-                android:textSize="@dimen/paragraph_text"/>
-
-
-            <TextView
-                android:id="@+id/selection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="Selection of Courses"
-                android:textSize="@dimen/fragment_h2_text"
-                android:textColor="@color/fragment_h2_textColor"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/selection_p51"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph31"
-                android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/selection_p52"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph32"
-                android:textSize="@dimen/paragraph_text"/>
+            <LinearLayout
+                android:id="@+id/capstoneLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/h2_margin_bottom">
+                <TextView
+                    android:id="@+id/capstone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/h2_margin_bottom"
+                    android:text="Capstone Experience – Dissertations and Projects"
+                    android:textSize="@dimen/fragment_h2_text"
+                    android:textColor="@color/fragment_h2_textColor"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/capstone_p1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/paragraph_text"/>
+            </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/capstone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="Capstone Experience – Dissertations and Projects"
-                android:textSize="@dimen/fragment_h2_text"
-                android:textColor="@color/fragment_h2_textColor"
-                android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/capstone_p61"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph31"
-                android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/capstone_p62"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph32"
-                android:textSize="@dimen/paragraph_text"/>
         </LinearLayout>
 
     </LinearLayout>

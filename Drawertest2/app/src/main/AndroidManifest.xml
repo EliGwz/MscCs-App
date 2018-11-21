@@ -27,12 +27,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OnlineApplication"></activity>
+        <activity android:name=".OnlineApplication" />
         <activity
             android:name=".HomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_home"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".TalentActivity" />
+        <activity android:name=".SecurityActivity" />
+        <activity android:name=".MultimediaActivity" />
+        <activity android:name=".FinancialActivity" />
+        <activity android:name=".GeneralActivity"></activity>
     </application>
 
 </manifest>

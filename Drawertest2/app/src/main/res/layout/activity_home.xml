@@ -23,8 +23,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
 
-    <ScrollView
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="@color/fragment_h1_textColor"
+        android:textSize="@dimen/fragment_h1_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -44,34 +59,27 @@
             android:text="Overview context"
             android:textColor="@color/fragment_h1_textColor"
             android:textSize="18sp" />
-    </ScrollView>
-
+    </LinearLayout>
 
     <Button
         android:id="@+id/next_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="NEXT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/toApp_btn"/>
+
+    <Button
+        android:id="@+id/toApp_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Into the App"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="@color/fragment_h1_textColor"
-        android:textSize="@dimen/fragment_h1_text"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
