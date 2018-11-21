@@ -22,6 +22,16 @@ Android中Fragment点击事件的添加（及点击事件无响应的原因）
 Fragment的数据交互 一 使用Handler
 - https://blog.csdn.net/Google_huchun/article/details/52346907
 
+How to start an activity on material navigation drawer menu item clicked
+- https://stackoverflow.com/questions/33064159/how-to-start-an-activity-on-material-navigation-drawer-menu-item-clicked
+
+## UI
+Add TextView in code (not int xml)
+In Activity
+- https://blog.csdn.net/harvic880925/article/details/18042183
+In Fragment
+- https://www.zhihu.com/question/40047121
+
 
 ## Jsoup
 Jsoup official docs
