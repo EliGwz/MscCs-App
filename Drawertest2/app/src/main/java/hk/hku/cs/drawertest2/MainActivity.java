@@ -135,6 +135,8 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentOverview()).commit();
         } else if (id == R.id.nav_course) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentCourse()).commit();
+        } else if (id == R.id.nav_teacher) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentTeachers()).commit();
         } else if (id == R.id.nav_duration) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentDuration()).commit();
         } else if (id == R.id.nav_regulation) {

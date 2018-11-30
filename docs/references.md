@@ -29,6 +29,7 @@ How to start an activity on material navigation drawer menu item clicked
 Add TextView in code (not int xml)
 In Activity
 - https://blog.csdn.net/harvic880925/article/details/18042183
+- https://blog.csdn.net/qq_36125733/article/details/76693624
 In Fragment
 - https://www.zhihu.com/question/40047121
 

@@ -47,6 +47,10 @@
                     android:icon="@drawable/ic_menu_slideshow"
                     android:title="Courses" />
                 <item
+                    android:id="@+id/nav_teacher"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Teachers" />
+                <item
                     android:id="@+id/nav_duration"
                     android:icon="@drawable/ic_menu_manage"
                     android:title="Duration &amp; Schedule" />
