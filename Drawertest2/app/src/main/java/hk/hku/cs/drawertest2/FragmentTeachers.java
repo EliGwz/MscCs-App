@@ -35,14 +35,11 @@ public class FragmentTeachers extends Fragment {
         urlString = "https://www.msc-cs.hku.hk/About/Faculty";
         teacherListView = view.findViewById(R.id.teacherListView);
 
-        String[] strings = {"img", "name", "title", "field"}; // map key
-        int[] ids = {R.id.teacher_img, R.id.teacher_name, R.id.teacher_title, R.id.teacher_researchField}; // teacher_list.xml
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this.getContext(), getData(), R.layout.teacher_list, strings, ids);
-        teacherListView.setAdapter(simpleAdapter);
         new DownloadWebpageTask().execute(urlString);
         return view;
     }
 
+    /***
     private List<HashMap<String, Object>> getData() {
         ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
         HashMap<String, Object> map = null;
@@ -56,6 +53,7 @@ public class FragmentTeachers extends Fragment {
         }
         return list;
     }
+     ***/
 
     private class DownloadWebpageTask extends AsyncTask<String, Void, Document> {
         @Override
@@ -71,14 +69,40 @@ public class FragmentTeachers extends Fragment {
         }
         @Override
         protected void onPostExecute(Document doc) {
-            Elements teacherElements = doc.select("mportfolio-masonry-entry");
+            //Elements teacherElements = doc.select("article");
+            Elements teacherElements = doc.getElementsByClass("portfolio-masonry-entry");
             System.out.println("/**************** YOU ARE IN FRAGMENT TEACHER ********************/");
-            for (Element e: teacherElements){
-                String imgUrl = e.select("img[src$=.jpg]").text();
-                String name = e.select("card-title").first().text();
-                String title = e.select("font-size:14px").text();
-                String field = e.select("rFieldContent").text();
-                System.out.println(name + "\n");
+            if (teacherElements.hasText() == true){
+                System.out.println("teacherElements size = "+ Integer.toString(teacherElements.size()));
+                Elements imgElements = teacherElements.select("img[src]");
+                System.out.println("imgElements size = " + Integer.toString(imgElements.size()));
+                Elements nameElements = teacherElements.select("span.activator");
+                System.out.println("nameElements size = " + Integer.toString(nameElements.size()));
+                Elements titleElements = teacherElements.select("div.card-reveal").select("span[style]");
+                System.out.println("titleElements size = " + Integer.toString(titleElements.size()));
+                Elements fieldElements = teacherElements.select("div.rFieldContent");
+                System.out.println("fieldElements size = " + Integer.toString(fieldElements.size()));
+
+                String[] strings = {"img", "name", "title", "field"}; // map key
+                int[] ids = {R.id.teacher_img, R.id.teacher_name, R.id.teacher_title, R.id.teacher_researchField}; // teacher_list.xml
+
+                ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+                HashMap<String, Object> map = null;
+
+                for (int i = 0; i < teacherElements.size(); i++){
+                    map = new HashMap<String, Object>();
+                    map.put("img", "https://www.msc-cs.hku.hk"+imgElements.get(i).attr("src"));
+                    map.put("name", nameElements.get(i).text());
+                    map.put("title", titleElements.get(i).text());
+                    map.put("field", fieldElements.get(i).text());
+                    list.add(map);
+                }
+
+                SimpleAdapter simpleAdapter = new SimpleAdapter(getContext(), list, R.layout.teacher_list, strings, ids);
+                teacherListView.setAdapter(simpleAdapter);
+
+            } else {
+                System.out.println("teacherElements is empty");
             }
             System.out.println("/**************** END OF FRAGMENT TEACHER ********************/");
         }

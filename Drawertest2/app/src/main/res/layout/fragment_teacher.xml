@@ -1,60 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/white">
+    android:background="#fff"
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ListView
+        android:id="@+id/teacherListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="3780sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:cacheColorHint="#00000000"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" >
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="80dip"
-                android:src="@drawable/application"/>
-        </LinearLayout>
+    </ListView>
 
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/body_margin_left"
-            android:layout_marginRight="@dimen/body_margin_right">
-
-            <TextView
-                android:id="@+id/courseTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Teachers"
-                android:textSize="@dimen/fragment_h1_text"
-                android:textColor="@color/fragment_h1_textColor"
-                android:textStyle="bold"/>
-            <View
-                android:layout_width="250dp"
-                android:layout_height="4dp"
-                android:layout_marginBottom="10dp"
-                android:background="@android:color/holo_green_dark" />
-
-            <ListView
-                android:id="@+id/teacherListView"
-                android:layout_width="match_parent"
-                android:layout_height="1220sp"
-                android:paddingTop="5sp"
-                android:paddingBottom="5sp"
-                android:cacheColorHint="#00000000"
-                android:stackFromBottom="true"
-                android:transcriptMode="alwaysScroll" >
-
-            </ListView>
-
-        </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>
