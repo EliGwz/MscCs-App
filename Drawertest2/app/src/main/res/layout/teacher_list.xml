@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 这是列表项的布局文件，每一行长什么样子，修改这里 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="120sp"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/teacher_img"
+        android:layout_width="120sp"
+        android:layout_height="120sp"
+        android:src="@drawable/t1_chanhth" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/teacher_img" >
+
+        <TextView
+            android:id="@+id/teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="TeacherName"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/teacher_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teacher_name"
+            android:layout_alignParentLeft="true"
+            android:text="TeacherInfo"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#bbb"
+            android:textSize="15sp"  />
+        <TextView
+            android:id="@+id/teacher_researchField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teacher_title"
+            android:layout_alignParentLeft="true"
+            android:text="TeacherInfo"
+            android:ellipsize="end"
+            android:textColor="#999"
+            android:textSize="15sp"  />
+    </RelativeLayout>
+
+</RelativeLayout>

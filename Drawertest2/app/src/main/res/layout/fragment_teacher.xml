@@ -42,17 +42,15 @@
                 android:layout_marginBottom="10dp"
                 android:background="@android:color/holo_green_dark" />
 
-            
-            <TextView
-                android:id="@+id/teacher_p1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph1"
-                android:textSize="@dimen/paragraph_text"/>
-            
             <ListView
+                android:id="@+id/teacherListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="1220sp"
+                android:paddingTop="5sp"
+                android:paddingBottom="5sp"
+                android:cacheColorHint="#00000000"
+                android:stackFromBottom="true"
+                android:transcriptMode="alwaysScroll" >
 
             </ListView>
 
