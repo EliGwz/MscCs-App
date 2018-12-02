@@ -44,20 +44,23 @@
 
 
             <TextView
-                android:id="@+id/course"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="MSc(CompSc) Courses"
+                android:text="Cyber Security"
                 android:textSize="@dimen/fragment_h2_text"
                 android:textColor="@color/fragment_h2_textColor"
                 android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/course_p11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph11"
-                android:textSize="@dimen/paragraph_text"/>
+
+            <ListView
+                android:id="@+id/courseListView"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:paddingTop="0sp"
+                android:paddingBottom="5sp"
+                android:cacheColorHint="#00000000"
+                android:stackFromBottom="true"
+                android:transcriptMode="alwaysScroll" />
 
         </LinearLayout>
 
