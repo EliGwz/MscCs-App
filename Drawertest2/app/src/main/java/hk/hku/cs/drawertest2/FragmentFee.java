@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class FragmentFee extends Fragment {
 
-    private TextView aboutText, tp11;
+    private TextView tp11;
 
     @Nullable
     @Override

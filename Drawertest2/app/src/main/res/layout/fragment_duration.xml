@@ -44,25 +44,54 @@
 
 
             <TextView
-                android:id="@+id/course"
+                android:id="@+id/duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="MSc(CompSc) Courses"
+                android:text="Duration of Study"
                 android:textSize="@dimen/fragment_h2_text"
                 android:textColor="@color/fragment_h2_textColor"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/course_p11"
+                android:id="@+id/duration_p11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="paragraph11"
                 android:textSize="@dimen/paragraph_text"/>
             <TextView
-                android:id="@+id/course_p12"
+                android:id="@+id/duration_p12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="paragraph12"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/duration_p13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paragraph13"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/duration_p14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paragraph14"
+                android:textSize="@dimen/paragraph_text"/>
+
+            <TextView
+                android:id="@+id/schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/h2_margin_bottom"
+                android:layout_marginTop="@dimen/h2_margin_bottom"
+                android:text="Class Schedule"
+                android:textSize="@dimen/fragment_h2_text"
+                android:textColor="@color/fragment_h2_textColor"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/schedule_p21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paragraph11"
                 android:textSize="@dimen/paragraph_text"/>
 
         </LinearLayout>

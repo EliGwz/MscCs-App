@@ -58,12 +58,6 @@
                 android:layout_height="wrap_content"
                 android:text="paragraph11"
                 android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/course_p12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph12"
-                android:textSize="@dimen/paragraph_text"/>
 
         </LinearLayout>
 
