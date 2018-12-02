@@ -1,6 +1,6 @@
 # MScCS App todo list
 
-1. Courses (each fragment for each stream, fragment inside fragment, listview, simpleAdapter)
+1. ~~Courses (each fragment for each stream, fragment inside fragment, listview, simpleAdapter)~~
 
 2. drawer icon
 
