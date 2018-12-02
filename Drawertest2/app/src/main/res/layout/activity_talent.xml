@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="What kind of talent do you want to get?"
         android:textSize="30sp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
         <!--android:layout_centerInParent="true"-->
     <LinearLayout
         android:orientation="vertical"

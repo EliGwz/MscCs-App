@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="30sp"
                     android:paddingBottom="30sp"
-                    android:text="Unbreakable Defender"
+                    android:text="Cyber Security"
                     android:background="@android:color/holo_blue_dark"/>
                 <Button
                     android:id="@+id/multimedia"
@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="30sp"
                     android:paddingBottom="30sp"
-                    android:text="Multimedia Master"
+                    android:text="Multimedia Computing"
                     android:background="@android:color/holo_green_dark"/>
                 <Button
                     android:id="@+id/financial"
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="30sp"
                     android:paddingBottom="30sp"
-                    android:text="Financial Elite in Finance"
+                    android:text="Financial Computing"
                     android:background="@android:color/holo_red_dark"/>
                 <Button
                     android:id="@+id/general"
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="30sp"
                     android:paddingBottom="30sp"
-                    android:text="All-round Developer"
+                    android:text="General Stream"
                     android:background="@android:color/holo_orange_dark"/>
 
             </LinearLayout>

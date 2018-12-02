@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home_black"
             android:title="Home" />
         <!--
         <item
@@ -21,7 +21,7 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_admission"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_playlist"
                     android:title="Admission Requirements" />
                 <item
                     android:id="@+id/nav_application"
@@ -29,7 +29,7 @@
                     android:title="Application Procedures" />
                 <item
                     android:id="@+id/nav_fee"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:icon="@drawable/ic_fee"
                     android:title="Composition Fees" />
             </group>
         </menu>
@@ -40,23 +40,23 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_overview"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_overview"
                     android:title="Programme Overview" />
                 <item
                     android:id="@+id/nav_course"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/ic_school"
                     android:title="Courses" />
                 <item
                     android:id="@+id/nav_teacher"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/ic_people"
                     android:title="Teachers" />
                 <item
                     android:id="@+id/nav_duration"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:icon="@drawable/ic_menu_gallery"
                     android:title="Duration &amp; Schedule" />
                 <item
                     android:id="@+id/nav_regulation"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_folder_open"
                     android:title="Regulations &amp; Syllabus" />
             </group>
         </menu>
@@ -66,7 +66,7 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_contact"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_contact_phone"
                     android:title="Contact Us" />
             </group>
         </menu>

@@ -2,7 +2,7 @@
 
 1. ~~Courses (each fragment for each stream, fragment inside fragment, listview, simpleAdapter)~~
 
-2. drawer icon
+2. ~~drawer icon~~
 
 3. link handling (ContactUS, AdmissionRequirements - Regulation)
 
