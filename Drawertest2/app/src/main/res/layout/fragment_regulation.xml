@@ -87,11 +87,41 @@
                 android:layout_height="wrap_content"
                 android:text="3. Degree Regulations of MSc(CompSc)"
                 android:textSize="@dimen/paragraph_text"/>
+
             <TextView
+                android:id="@+id/pdf3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The regulations and syllabus are applicable to students admitted to the curriculum in 2018-2019 and thereafter."
+                android:text="https://www4.hku.hk/pubunit/drcd/files/pgdr2017-18/tpg-regulations.pdf"
+                android:textSize="@dimen/paragraph_text"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorLink="@android:color/holo_blue_dark" />
+
+            <TextView
+                android:id="@+id/syllabus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/h2_margin_bottom"
+                android:text="SYLLABUS"
+                android:textSize="@dimen/fragment_h2_text"
+                android:textColor="@color/fragment_h2_textColor"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/syllabus_p1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Degree Syllabus of MSc(CompSc)"
                 android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/pdf4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="http://www.msc-cs.hku.hk/Media/Default/RegulationSyllabus/Syllabus_MSc(CompSc)_2018-19.pdf"
+                android:textSize="@dimen/paragraph_text"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorLink="@android:color/holo_blue_dark" />
+
+
 
         </LinearLayout>
 

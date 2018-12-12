@@ -6,6 +6,7 @@
     android:background="@android:color/white">
 
     <LinearLayout
+        android:id="@+id/contactLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -60,8 +61,36 @@
                 android:id="@+id/contact_p3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Website URL: http://www.msc-cs.hku.hk &#x000A;Facebook Page: https://www.facebook.com/hkumsccs"
+                android:text="Website URL:"
                 android:textSize="@dimen/paragraph_text"
+                android:layout_marginBottom="0sp"/>
+
+            <TextView
+                android:id="@+id/contact_p5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="http://www.msc-cs.hku.hk"
+                android:textSize="@dimen/paragraph_text"
+                android:textColor="@android:color/holo_blue_light"
+                android:textColorLink="@android:color/holo_blue_bright"
+                android:layout_marginBottom="0sp"/>
+
+            <TextView
+                android:id="@+id/contact_p6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Facebook Page:"
+                android:textSize="@dimen/paragraph_text"
+                android:layout_marginBottom="0sp"/>
+
+            <TextView
+                android:id="@+id/contact_p7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="https://www.facebook.com/hkumsccs"
+                android:textSize="@dimen/paragraph_text"
+                android:textColor="@android:color/holo_blue_light"
+                android:textColorLink="@android:color/holo_blue_bright"
                 android:layout_marginBottom="10sp"/>
 
             <TextView
