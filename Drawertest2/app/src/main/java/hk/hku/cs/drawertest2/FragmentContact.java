@@ -1,6 +1,8 @@
 package hk.hku.cs.drawertest2;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,7 +23,7 @@ import java.io.IOException;
 
 public class FragmentContact extends Fragment {
 
-    private TextView web1, web2;
+    private TextView web1, web2, phoneCall;
 
 
     @Nullable
@@ -36,14 +38,23 @@ public class FragmentContact extends Fragment {
 
         web1 = view.findViewById(R.id.contact_p5);
         web2 = view.findViewById(R.id.contact_p7);
+        phoneCall = view.findViewById(R.id.contact_phone);
         web1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                /***
                 // find current layout
                 LinearLayout linearLayout = getView().findViewById(R.id.contactLayout);
                 // add webview
                 WebView webView = new WebView(linearLayout.getContext());
                 String appUrl = web1.getText().toString();
                 webView.loadUrl(appUrl);
+                 ***/
+
+                Intent intent = new Intent(getActivity(),OnlineApplication.class);
+                String appUrl = web1.getText().toString();
+                intent.putExtra("extraTag",appUrl);
+                startActivity(intent);
+                //web1.setTextColor(Color.rgb(217,179,255));
             }
         });
         web2.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +65,18 @@ public class FragmentContact extends Fragment {
                 WebView webView = new WebView(linearLayout.getContext());
                 String appUrl = web2.getText().toString();
                 webView.loadUrl(appUrl);
+            }
+        });
+        phoneCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:85239171828"));
+                try{
+                    startActivity(callIntent);
+                } catch (SecurityException e){
+                    // do nothing
+                }
             }
         });
         return view;

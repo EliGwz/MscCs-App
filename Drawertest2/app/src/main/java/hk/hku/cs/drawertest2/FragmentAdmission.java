@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -28,7 +29,7 @@ import java.io.InputStreamReader;
 
 public class FragmentAdmission extends Fragment {
 
-    private TextView header, title1, title2, title3, tp11, tp21, tp31, tp12, tp22, tp32;
+    private TextView header, title1, title2, title3, tp11, tp21, tp31, tp12, tp32, link1, link2, link3, link4;
 
     @Nullable
     @Override
@@ -47,8 +48,12 @@ public class FragmentAdmission extends Fragment {
         tp31 = (TextView) view.findViewById(R.id.eng_req_p31);
 
         tp12 = (TextView) view.findViewById(R.id.eligibilit_p12);
-        //tp22 = (TextView) view.findViewById(R.id.regulations_p22);
         tp32 = (TextView) view.findViewById(R.id.eng_req_p32);
+
+        link1 = (TextView) view.findViewById(R.id.regulations_link1);
+        link2 = (TextView) view.findViewById(R.id.regulations_link2);
+        link3 = (TextView) view.findViewById(R.id.regulations_link3);
+        link4 = (TextView) view.findViewById(R.id.regulations_link4);
 
         new DownloadWebpageTask().execute(stringUrl);
 
@@ -81,7 +86,7 @@ public class FragmentAdmission extends Fragment {
             // items = 4
             String tpString12 = "";
             for (int i = 2; i<=5; i++){
-                tpString12 = tpString12 + titleElement1.select("p").get(i).text() + "\n\n";
+                tpString12 = tpString12 + titleElement1.select("p").get(i).text() + "\n";
             }
             tp12.setText(tpString12);
 
@@ -89,12 +94,56 @@ public class FragmentAdmission extends Fragment {
             Element titleElement2 = doc.getElementById("regulations");
             String titleString2 = titleElement2.select("strong").text();
             title2.setText(titleString2);
-            // items = 3
-            String tpString22 = "";
-            for (int i = 1; i<=3; i++){
-                tpString22 = tpString22 + titleElement2.select("p").get(i).text() + "\n\n";
-            }
-            tp21.setText(tpString22);
+            // items = 4
+            link1.setText(titleElement2.select("a").get(0).text());
+            link2.setText(titleElement2.select("a").get(1).text());
+            link3.setText(titleElement2.select("a").get(2).text());
+            link4.setText(titleElement2.select("a").get(3).text());
+            link1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // find current layout
+                    LinearLayout linearLayout = getView().findViewById(R.id.admissionLayout);
+                    // add webview
+                    WebView webView = new WebView(linearLayout.getContext());
+                    String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link1.getText().toString();
+                    webView.loadUrl(linkUrl);
+                }
+            });
+            link2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // find current layout
+                    LinearLayout linearLayout = getView().findViewById(R.id.admissionLayout);
+                    // add webview
+                    WebView webView = new WebView(linearLayout.getContext());
+                    String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link2.getText().toString();
+                    webView.loadUrl(linkUrl);
+                }
+            });
+            link3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // find current layout
+                    LinearLayout linearLayout = getView().findViewById(R.id.admissionLayout);
+                    // add webview
+                    WebView webView = new WebView(linearLayout.getContext());
+                    String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link3.getText().toString();
+                    webView.loadUrl(linkUrl);
+                }
+            });
+            link4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // find current layout
+                    LinearLayout linearLayout = getView().findViewById(R.id.admissionLayout);
+                    // add webview
+                    WebView webView = new WebView(linearLayout.getContext());
+                    String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link4.getText().toString();
+                    webView.loadUrl(linkUrl);
+                }
+            });
+
 
             /************************** English Requirement *************************/
             Element titleElement3 = doc.getElementById("eng-req");
@@ -105,11 +154,9 @@ public class FragmentAdmission extends Fragment {
             // items = 5
             String tpString32 = "";
             for (int i = 2; i<=6; i++){
-                tpString32 = tpString32 + titleElement3.select("p").get(i).text() + "\n\n";
+                tpString32 = tpString32 + titleElement3.select("p").get(i).text() + "\n";
             }
             tp32.setText(tpString32);
-
-            System.out.println("/************************/\n"+tp21.getText().toString()+"\n/************************/");
         }
     }
 }

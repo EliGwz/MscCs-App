@@ -73,10 +73,12 @@ public class FragmentTeachers extends Fragment {
                 Elements titleElements = teacherElements.select("div.card-reveal").select("span[style]");
                 Elements fieldElements = teacherElements.select("div.rFieldContent");
 
+                /***
                 System.out.println("imgElements size = " + Integer.toString(imgElements.size()));
                 System.out.println("nameElements size = " + Integer.toString(nameElements.size()));
                 System.out.println("titleElements size = " + Integer.toString(titleElements.size()));
                 System.out.println("fieldElements size = " + Integer.toString(fieldElements.size()));
+                 ***/
 
                 String[] strings = {"img", "name", "title", "field"}; // map key
                 int[] ids = {R.id.teacher_img, R.id.teacher_name, R.id.teacher_title, R.id.teacher_researchField}; // teacher_list.xml

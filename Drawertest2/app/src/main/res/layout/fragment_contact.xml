@@ -50,10 +50,18 @@
                 android:layout_marginBottom="10sp"/>
 
             <TextView
+                android:id="@+id/contact_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tel: (852) 3917 1828 (Click to call)"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/paragraph_text"
+                android:layout_marginBottom="10sp"/>
+            <TextView
                 android:id="@+id/contact_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tel: (852) 3917 1828&#x000A;Fax: (852) 2547 4442&#x000A;Email: msccs@cs.hku.hk"
+                android:text="Fax: (852) 2547 4442&#x000A;Email: msccs@cs.hku.hk"
                 android:textSize="@dimen/paragraph_text"
                 android:layout_marginBottom="10sp"/>
 
@@ -69,7 +77,7 @@
                 android:id="@+id/contact_p5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="http://www.msc-cs.hku.hk"
+                android:text="https://www.msc-cs.hku.hk/"
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_light"
                 android:textColorLink="@android:color/holo_blue_bright"

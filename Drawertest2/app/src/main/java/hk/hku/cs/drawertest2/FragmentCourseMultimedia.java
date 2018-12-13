@@ -68,7 +68,7 @@ public class FragmentCourseMultimedia extends Fragment {
                 map.put("course_no", eachLineElements.get(i).select("td").select("p").get(0).text());
                 map.put("course_name", eachLineElements.get(i).select("td").select("p").get(1).text());
                 list.add(map);
-                System.out.println(eachLineElements.get(i).select("td").text());
+                //System.out.println(eachLineElements.get(i).select("td").text());
             }
 
             SimpleAdapter simpleAdapter = new SimpleAdapter(getContext(), list, R.layout.course_list, strings, ids);

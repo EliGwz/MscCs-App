@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class FragmentApplication extends Fragment {
 
-    private TextView header, tp11, tp12, tp13, tp14, applyBtn;
+    private TextView header, tp11, tp12, applyBtn;
 
     @Nullable
     @Override
@@ -32,8 +32,6 @@ public class FragmentApplication extends Fragment {
         header = (TextView) view.findViewById(R.id.admissionText);
         tp11 = (TextView) view.findViewById(R.id.how_to_p11);
         tp12 = (TextView) view.findViewById(R.id.how_to_p12);
-        tp13 = (TextView) view.findViewById(R.id.how_to_p13);
-        tp14 = (TextView) view.findViewById(R.id.how_to_p14);
         applyBtn = (TextView) view.findViewById(R.id.applyBtn);
 
         new DownloadWebpageTask().execute(stringUrl);
@@ -43,7 +41,7 @@ public class FragmentApplication extends Fragment {
                 String appUrl = "https://aal.hku.hk/tpg/programme/master-science-computer-science";
                 intent.putExtra("extraTag",appUrl);
                 startActivity(intent);
-                //applyBtn.setTextColor(Color.RED);
+                //applyBtn.setTextColor(Color.rgb(217,179,255));
             }
         });
         return view;

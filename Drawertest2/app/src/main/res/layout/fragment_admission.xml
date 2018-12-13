@@ -6,6 +6,7 @@
     android:background="@android:color/white">
 
     <LinearLayout
+        android:id="@+id/admissionLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -48,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="title1"
+                android:text="Eligibility"
                 android:textSize="@dimen/fragment_h2_text"
                 android:textColor="@color/fragment_h2_textColor"
                 android:textStyle="bold"/>
@@ -71,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="title2"
+                android:text="Regulations"
                 android:textSize="@dimen/fragment_h2_text"
                 android:textColor="@color/fragment_h2_textColor"
                 android:textStyle="bold"/>
@@ -79,13 +80,47 @@
                 android:id="@+id/regulations_p21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="1. General Regulations of The University:"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/regulations_link1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="link1"
+                android:textColor="@android:color/holo_blue_light"
                 android:textSize="@dimen/paragraph_text"/>
             <TextView
                 android:id="@+id/regulations_p22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph22"
+                android:text="2. University's Regulations for Taught Postgraduate Curricula: "
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/regulations_link2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="link2"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/regulations_p23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. Degree Regulations of MSc(CompSc) for students admitted to the curriculum in 2017-2018 and thereafter:"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/regulations_link3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="link3"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/paragraph_text"/>
+            <TextView
+                android:id="@+id/regulations_link4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="link4"
+                android:textColor="@android:color/holo_blue_light"
                 android:textSize="@dimen/paragraph_text"/>
 
 
@@ -94,7 +129,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/h2_margin_bottom"
-                android:text="title3"
+                android:layout_marginTop="15dp"
+                android:text="Language requirement"
                 android:textSize="@dimen/fragment_h2_text"
                 android:textColor="@color/fragment_h2_textColor"
                 android:textStyle="bold"/>

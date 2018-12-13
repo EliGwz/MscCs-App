@@ -72,25 +72,13 @@
                 android:layout_height="wrap_content"
                 android:text="paragraph12"
                 android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/how_to_p13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph13"
-                android:textSize="@dimen/paragraph_text"/>
-            <TextView
-                android:id="@+id/how_to_p14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph14"
-                android:textSize="@dimen/paragraph_text"/>
 
 
             <TextView
                 android:id="@+id/app_fee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/h2_margin_bottom"
+                android:layout_marginBottom="8dp"
                 android:text="Application Fee"
                 android:textSize="@dimen/fragment_h2_text"
                 android:textColor="@android:color/holo_green_dark"
@@ -109,6 +97,7 @@
                 android:layout_marginBottom="@dimen/h2_margin_bottom"
                 android:text="Application Timetable"
                 android:textSize="@dimen/fragment_h2_text"
+                android:paddingTop="@dimen/h2_margin_bottom"
                 android:textColor="@android:color/holo_green_dark"
                 android:textStyle="bold"/>
 
@@ -182,7 +171,7 @@
                 </TableRow>
                 <TableRow
                     android:id="@+id/tr_3"
-                    android:background="@drawable/table_row_bg"
+                    android:background="@drawable/table_row_last_bg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp">
@@ -197,7 +186,7 @@
                         android:id="@+id/tv_32"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Clearing round:"
+                        android:text=""
                         android:background="@drawable/table_cell_bg"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp" />
@@ -210,6 +199,7 @@
                         android:paddingRight="10dp"
                         android:layout_gravity="right" />
                 </TableRow>
+                <!--
                 <TableRow
                     android:id="@+id/tr_total"
                     android:layout_width="match_parent"
@@ -217,7 +207,6 @@
                     android:background="@drawable/table_row_last_bg"
                     android:padding="5dp"
                     >
-                    <!-- layout_span is table column span -->
                     <TextView
                         android:id="@+id/tv_total_price"
                         android:layout_width="wrap_content"
@@ -228,13 +217,8 @@
                         android:textStyle="italic"
                         />
                 </TableRow>
+                -->
             </TableLayout>
-            <TextView
-                android:id="@+id/timetable_p32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="paragraph32"
-                android:textSize="@dimen/paragraph_text"/>
         </LinearLayout>
 
 
