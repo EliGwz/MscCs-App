@@ -16,6 +16,7 @@ import android.widget.TextView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 
@@ -105,6 +106,7 @@ public class FragmentOverview extends Fragment {
                 LinearLayout.LayoutParams ov_params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 // set margin
                 ov_params.setMargins(1,1,1,20);
+                overviewTv.setLineSpacing(overviewTv.getLineSpacingExtra(),1.2f);
                 overviewLayout.setLayoutParams(ov_params);
                 overviewTv.setText(textString);
                 overviewLayout.addView(overviewTv);

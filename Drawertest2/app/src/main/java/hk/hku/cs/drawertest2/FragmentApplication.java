@@ -41,7 +41,7 @@ public class FragmentApplication extends Fragment {
                 String appUrl = "https://aal.hku.hk/tpg/programme/master-science-computer-science";
                 intent.putExtra("extraTag",appUrl);
                 startActivity(intent);
-                //applyBtn.setTextColor(Color.rgb(217,179,255));
+                applyBtn.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
         return view;

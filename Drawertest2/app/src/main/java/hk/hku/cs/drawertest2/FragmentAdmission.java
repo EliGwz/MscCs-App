@@ -108,6 +108,7 @@ public class FragmentAdmission extends Fragment {
                     WebView webView = new WebView(linearLayout.getContext());
                     String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link1.getText().toString();
                     webView.loadUrl(linkUrl);
+                    link1.setTextColor(getResources().getColor(R.color.link_clicked));
                 }
             });
             link2.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +120,7 @@ public class FragmentAdmission extends Fragment {
                     WebView webView = new WebView(linearLayout.getContext());
                     String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link2.getText().toString();
                     webView.loadUrl(linkUrl);
+                    link2.setTextColor(getResources().getColor(R.color.link_clicked));
                 }
             });
             link3.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +132,7 @@ public class FragmentAdmission extends Fragment {
                     WebView webView = new WebView(linearLayout.getContext());
                     String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link3.getText().toString();
                     webView.loadUrl(linkUrl);
+                    link3.setTextColor(getResources().getColor(R.color.link_clicked));
                 }
             });
             link4.setOnClickListener(new View.OnClickListener() {
@@ -141,6 +144,7 @@ public class FragmentAdmission extends Fragment {
                     WebView webView = new WebView(linearLayout.getContext());
                     String linkUrl = "http://docs.google.com/gview?embedded=true&url=" + link4.getText().toString();
                     webView.loadUrl(linkUrl);
+                    link4.setTextColor(getResources().getColor(R.color.link_clicked));
                 }
             });
 

@@ -63,8 +63,9 @@
                     android:id="@+id/text_security"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="about cyber security"
-                    android:textSize="@dimen/paragraph_text"/>
+                    android:text=""
+                    android:textSize="@dimen/paragraph_text"
+                    android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             </LinearLayout>
 

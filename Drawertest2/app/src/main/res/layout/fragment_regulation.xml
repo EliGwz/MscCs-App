@@ -58,7 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1. General Regulations of The University "
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/pdf1"
                 android:layout_width="wrap_content"
@@ -66,13 +67,15 @@
                 android:text="https://www4.hku.hk/pubunit/drcd/files/pgdr2017-18/genreg.pdf"
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textColorLink="@android:color/holo_blue_dark" />
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/regulation_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2. University's Regulations for Taught Postgraduate Curricula: "
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/pdf2"
                 android:layout_width="wrap_content"
@@ -80,13 +83,15 @@
                 android:text="https://www4.hku.hk/pubunit/drcd/files/pgdr2017-18/tpg-regulations.pdf"
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textColorLink="@android:color/holo_blue_dark" />
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/regulation_p3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3. Degree Regulations of MSc(CompSc)"
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/pdf3"
@@ -95,7 +100,8 @@
                 android:text="https://www4.hku.hk/pubunit/drcd/files/pgdr2017-18/tpg-regulations.pdf"
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textColorLink="@android:color/holo_blue_dark" />
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/syllabus"
@@ -111,7 +117,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Degree Syllabus of MSc(CompSc)"
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/pdf4"
                 android:layout_width="wrap_content"
@@ -119,7 +126,8 @@
                 android:text="http://www.msc-cs.hku.hk/Media/Default/RegulationSyllabus/Syllabus_MSc(CompSc)_2018-19.pdf"
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textColorLink="@android:color/holo_blue_dark" />
+                android:textColorLink="@android:color/holo_blue_dark"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
 
 

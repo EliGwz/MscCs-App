@@ -47,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:text="The MSc Programme Office&#x000A;Department of Computer Science &#x000A;P3-02, Graduate House&#x00A;The University of Hong Kong"
                 android:textSize="@dimen/paragraph_text"
-                android:layout_marginBottom="10sp"/>
+                android:layout_marginBottom="10sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/contact_phone"
@@ -56,14 +57,16 @@
                 android:text="Tel: (852) 3917 1828 (Click to call)"
                 android:textColor="@android:color/holo_blue_light"
                 android:textSize="@dimen/paragraph_text"
-                android:layout_marginBottom="10sp"/>
+                android:layout_marginBottom="10sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/contact_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fax: (852) 2547 4442&#x000A;Email: msccs@cs.hku.hk"
                 android:textSize="@dimen/paragraph_text"
-                android:layout_marginBottom="10sp"/>
+                android:layout_marginBottom="10sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/contact_p3"
@@ -71,7 +74,8 @@
                 android:layout_height="wrap_content"
                 android:text="Website URL:"
                 android:textSize="@dimen/paragraph_text"
-                android:layout_marginBottom="0sp"/>
+                android:layout_marginBottom="0sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/contact_p5"
@@ -81,7 +85,8 @@
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_light"
                 android:textColorLink="@android:color/holo_blue_bright"
-                android:layout_marginBottom="0sp"/>
+                android:layout_marginBottom="0sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/contact_p6"
@@ -89,7 +94,8 @@
                 android:layout_height="wrap_content"
                 android:text="Facebook Page:"
                 android:textSize="@dimen/paragraph_text"
-                android:layout_marginBottom="0sp"/>
+                android:layout_marginBottom="0sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/contact_p7"
@@ -99,7 +105,8 @@
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_light"
                 android:textColorLink="@android:color/holo_blue_bright"
-                android:layout_marginBottom="10sp"/>
+                android:layout_marginBottom="10sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/contact_p4"
@@ -107,7 +114,8 @@
                 android:layout_height="wrap_content"
                 android:text="Office Hours:&#x000A;Mon-Fri: 9:00am-12:30pm&#x000A;1:30pm-5:00pm&#x000A;Sat: 9:00am-12:00pm"
                 android:textSize="@dimen/paragraph_text"
-                android:layout_marginBottom="10sp"/>
+                android:layout_marginBottom="10sp"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
         </LinearLayout>
 
 

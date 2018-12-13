@@ -64,8 +64,9 @@
                     android:id="@+id/text_general"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The MSc Programme Office&#x000A;Department of Computer Science &#x000A;P3-02, Graduate House&#x00A;The University of Hong Kong"
-                    android:textSize="@dimen/paragraph_text"/>
+                    android:text=""
+                    android:textSize="@dimen/paragraph_text"
+                    android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             </LinearLayout>
 

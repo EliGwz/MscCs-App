@@ -57,14 +57,16 @@
                 android:id="@+id/eligibilit_p11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph11"
-                android:textSize="@dimen/paragraph_text"/>
+                android:text=""
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/eligibilit_p12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph12"
-                android:textSize="@dimen/paragraph_text"/>
+                android:text=""
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
 
             <TextView
@@ -81,27 +83,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1. General Regulations of The University:"
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/regulations_link1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="link1"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/regulations_p22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2. University's Regulations for Taught Postgraduate Curricula: "
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/regulations_link2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="link2"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/regulations_p23"
                 android:layout_width="wrap_content"
@@ -114,14 +120,16 @@
                 android:layout_height="wrap_content"
                 android:text="link3"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/regulations_link4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="link4"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
 
             <TextView
@@ -138,14 +146,16 @@
                 android:id="@+id/eng_req_p31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph31"
-                android:textSize="@dimen/paragraph_text"/>
+                android:text=""
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="1.2"/>
             <TextView
                 android:id="@+id/eng_req_p32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph32"
-                android:textSize="@dimen/paragraph_text"/>
+                android:text=""
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
         </LinearLayout>
 
     </LinearLayout>

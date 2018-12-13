@@ -34,6 +34,7 @@ public class FragmentRegulation extends Fragment {
                 String pdfUrl = pdf01.getText().toString();
                 String goToUrl = "http://docs.google.com/gview?embedded=true&url="+pdfUrl;
                 webView.loadUrl(goToUrl);
+                pdf01.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
         pdf02.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +47,7 @@ public class FragmentRegulation extends Fragment {
                 String pdfUrl = pdf02.getText().toString();
                 String goToUrl = "http://docs.google.com/gview?embedded=true&url="+pdfUrl;
                 webView.loadUrl(goToUrl);
+                pdf02.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
         pdf03.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +60,7 @@ public class FragmentRegulation extends Fragment {
                 String pdfUrl = pdf03.getText().toString();
                 String goToUrl = "http://docs.google.com/gview?embedded=true&url="+pdfUrl;
                 webView.loadUrl(goToUrl);
+                pdf03.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
         pdf04.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +73,7 @@ public class FragmentRegulation extends Fragment {
                 String pdfUrl = pdf04.getText().toString();
                 String goToUrl = "http://docs.google.com/gview?embedded=true&url="+pdfUrl;
                 webView.loadUrl(goToUrl);
+                pdf04.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
 

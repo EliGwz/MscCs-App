@@ -54,8 +54,9 @@
                 android:id="@+id/fee_p11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph11"
-                android:textSize="@dimen/paragraph_text"/>
+                android:text=""
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
         </LinearLayout>
 
 

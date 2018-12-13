@@ -55,8 +55,9 @@
                 android:id="@+id/how_to_p11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph11"
-                android:textSize="@dimen/paragraph_text"/>
+                android:text=""
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/applyBtn"
                 android:layout_width="wrap_content"
@@ -65,13 +66,15 @@
                 android:textSize="@dimen/paragraph_text"
                 android:textColor="@android:color/holo_blue_light"
                 android:textColorLink="@android:color/holo_blue_bright"
-                android:onClick="applyBtnOnClick"/>
+                android:onClick="applyBtnOnClick"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
             <TextView
                 android:id="@+id/how_to_p12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="paragraph12"
-                android:textSize="@dimen/paragraph_text"/>
+                android:text=""
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
 
             <TextView
@@ -88,7 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="The application fee is HK$300 (non-refundable), paid by credit card online."
-                android:textSize="@dimen/paragraph_text"/>
+                android:textSize="@dimen/paragraph_text"
+                android:lineSpacingMultiplier="@dimen/line_spacing"/>
 
             <TextView
                 android:id="@+id/timetable"

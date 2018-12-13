@@ -127,7 +127,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(a)Courses (60 credits) + Project (12 credits)\n(b)Courses (48 credits) + Dissertation (24 credits)"
-                    android:textSize="@dimen/paragraph_text"/>
+                    android:textSize="@dimen/paragraph_text"
+                    android:lineSpacingMultiplier="1.2"/>
             </LinearLayout>
 
             <LinearLayout
@@ -150,7 +151,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="@dimen/paragraph_text"/>
+                    android:textSize="@dimen/paragraph_text"
+                    android:lineSpacingMultiplier="1.2"/>
             </LinearLayout>
 
 

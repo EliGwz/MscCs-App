@@ -54,7 +54,7 @@ public class FragmentContact extends Fragment {
                 String appUrl = web1.getText().toString();
                 intent.putExtra("extraTag",appUrl);
                 startActivity(intent);
-                //web1.setTextColor(Color.rgb(217,179,255));
+                web1.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
         web2.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +65,7 @@ public class FragmentContact extends Fragment {
                 WebView webView = new WebView(linearLayout.getContext());
                 String appUrl = web2.getText().toString();
                 webView.loadUrl(appUrl);
+                web2.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
         phoneCall.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +78,7 @@ public class FragmentContact extends Fragment {
                 } catch (SecurityException e){
                     // do nothing
                 }
+                phoneCall.setTextColor(getResources().getColor(R.color.link_clicked));
             }
         });
         return view;
